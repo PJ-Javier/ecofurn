@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Headland+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Headland One', serif;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url('img/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120vh;
+}
+
+.container {
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 8;
+}
+
+.container .contactInfo {
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100% - 80px);
+    background: #41452b;
+    z-index: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+}
+
+.container .contactInfo h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.container .contactInfo ul.info li {
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin: 45px 0;
+    cursor: pointer;
+    align-items: flex-start;
+}
+
+.container .contactInfo ul.info li span:nth-child(1) {
+    width: 30px;
+    min-width: 30px;
+}
+
+.container .contactInfo ul.info li span:nth-child(1) img {
+    max-width: 100%;
+    filter: invert(1);
+}
+
+.container .contactInfo ul.info li span:nth-child(2) {
+    color: #fff;
+    margin-left: 10px;
+    font-weight: 300;
+}
+
+.container .contactInfo ul.sci {
+    position: relative;
+    display: flex;
+}
+
+.container .contactInfo ul.sci li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.container .contactInfo ul.sci li a {
+    text-decoration:none;
+}
+
+.container .contactInfo ul.sci li a img {
+    filter:invert(1);
+}
+
+.container .inquiry {
+    position: absolute;
+    padding: 70px 50px;
+    padding-left: 250px;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    height: 100%;
+    background: #ada797;
+    box-shadow: 0 50px 50px rgba(0,0,0,0.25);
+}
+
+.container .inquiry h2 {
+    color: #4E433C;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.container .inquiry .formBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 25px;
+}
+
+.container .inquiry .formBox .inputBox {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.container .inquiry .formBox .inputBox.w50 {
+    width: 47%;
+}
+
+.container .inquiry .formBox .inputBox.w100 {
+  width: 100%;
+}
+
+.container .inquiry .formBox .inputBox input,
+.container .inquiry .formBox .inputBox textarea {
+    width: 100%;
+    resize: none;
+    padding: 7px 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #4E433C;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #777;
+}
+
+.container .inquiry .formBox .inputBox textarea {
+    height: 120px;
+}
+
+.container .inquiry .formBox .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 3px;
+    pointer-events: none;
+    font-size: 15px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+.container .inquiry .formBox .inputBox input:focus ~ span,
+.container .inquiry .formBox .inputBox input:valid ~ span,
+.container .inquiry .formBox .inputBox textarea:focus ~ span,
+.container .inquiry .formBox .inputBox textarea:valid ~ span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #333a2b;
+    font-weight: 500;
+}
+
+.container .inquiry .formBox .inputBox input[type="submit"] {
+    position: relative;
+    cursor: pointer;
+    background: #333a2b;
+    color: #fff;
+    border: none;
+    max-width: 120px;
+    padding: 8px;
+    bottom: -14px;
+}
+
+.container .inquiry .formBox .inputBox input[type="submit"]:hover {
+    background: #41452b;
+}
+
+@media (max-width : 1029px) {
+    .container {
+        width: 90%;
+        min-width: auto;
+        margin: 20px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+    .container .contactInfo {
+        top: 0;
+        height: 550px;
+        position: relative;
+        box-shadow: none;
+    }
+    .container .inquiry {
+        position: relative;
+        width: calc(100% - 350px);
+        padding-left: 0;
+        margin-left: 0;
+        padding: 40px;
+        height: 550px;
+        box-shadow: none;
+    }
+}
+@media (max-width : 991px) {
+    section {
+        background:#fff;
+    }
+    section::before {
+        display: none;
+    }
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .container .inquiry {
+        width: 100%;
+        height: auto;
+    }
+    .container .contactInfo {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+    .container .contactInfo ul.sci {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width : 550px ) and (min-width : 150px){
+    .container .inquiry {
+        padding: 25px;
+    }
+    .container .contactInfo {
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .container .contactInfo ul.sci {
+        margin-top: 40px;
+    }
+    .container .inquiry .formBox .inputBox.w50 {
+        width: 100%;
+    }
+}

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Headland+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: 'Headland One', serif;
+}
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url(images/login.jpg);
+    background-size: cover;
+    font-family: 'Headland One', serif;
+}
+
+.signup-section{
+    min-height: 100vh;
+    width: 100%;
+    padding: 0px 250px;
+}
+.message{
+    position: sticky;
+    top:0; left:0; right:0;
+    padding:15px 10px;
+    font-weight: bold;
+    background-color: #41452B;
+    text-align: center;
+    z-index: 1000;
+    color:#ece5d5;
+    box-shadow: 1px 11px 6px -6px rgba(0,0,0,0.45),
+  0px 25px 20px -20px rgba(0,0,0,0.45);
+    font-size: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+ }
+.left-cta  {
+    width: 50%;
+    height: 40rem;
+    background: url(images/cta.png) no-repeat center / cover; 
+}
+
+.signup-area{
+    background-color:#ECE5D5;
+    width: 50%;
+    height: 40rem;
+    color:#3C3C39;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.signup-area img{
+    height: 7rem;
+}
+
+.signup-area form {
+    width: 70%;
+}
+
+
+.textinput, textarea {
+    background:#ADA797;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 2rem;
+    padding: 15px;
+    gap: 20px;
+}
+::placeholder {
+    color:#ECE5D5;
+    
+}
+
+.submit-button {
+    background: #41452b;
+    padding: 13px 20px;
+    border: 1px solid #ece5d5;
+    color:#ECE5D5;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.submit-button:hover {
+    transition:.4s ease-in;
+  transform:scale(1.1);
+    box-shadow: 1px 11px 6px -6px rgba(0,0,0,0.45),
+  0px 25px 20px -20px rgba(0,0,0,0.45);
+}
+
+.signup-area a  {
+    color: #41452B;
+}
+
+@media screen and (max-width:780px) {
+    .signup{
+        width:100%;
+    }
+}

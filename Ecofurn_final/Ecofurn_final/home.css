@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Headland+One&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Headland One', serif;
+}
+
+body {
+  background-color: #ada797 !important;
+}
+
+/*SLIDER*/
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(65, 69, 43, 1.8), rgba(14, 29, 51, 0.2));
+}
+.hero-slider {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-slider .carousel-cell {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero-slider .carousel-cell .inner {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ece5d5;
+  text-align: center;
+}
+.hero-slider .carousel-cell .inner .title {
+  font-family: 'Headland One', serif;
+  font-size: 3rem;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 40px;
+}
+.hero-slider .carousel-cell .inner .btn {
+  border: 1px solid #ece5d5;
+  padding: 14px 18px;
+  text-transform: uppercase;
+  font-family: 'Headland One', serif;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: #ece5d5;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.hero-slider .carousel-cell .inner .btn:hover {
+  background: #333a2b;
+  color: #ece5d5;
+}
+.hero-slider .flickity-prev-next-button {
+  width: 80px;
+  height: 80px;
+  background: transparent;
+}
+.hero-slider .flickity-prev-next-button:hover {
+  background: transparent;
+}
+.hero-slider .flickity-prev-next-button .arrow {
+  fill: #ece5d5;
+}
+.hero-slider .flickity-page-dots {
+  bottom: 30px;
+}
+.hero-slider .flickity-page-dots .dot {
+  width: 30px;
+  height: 4px;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0 solid white;
+  border-radius: 0;
+}
+.hero-slider .flickity-page-dots .dot.is-selected {
+  background: #41452b;
+  border: 0 solid #41452b;
+}
+
+.text h2{
+  font-size: 3rem;
+  line-height: 1.1;
+  color: #41452b;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.row-items{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-gap: 1rem;
+  align-items: center;
+  text-align: center;
+  margin-top: -10px;
+}
+.container-box{
+  padding: 20px 5px;
+  transition: all 1s ease 0s;
+  cursor: pointer;
+}
+.container-img img{
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.container-box h4{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.container-box p{
+  font-size: 15px;
+  color: #41452b;
+}
+.container-box:hover{
+  border: #ece5d5 2px solid;
+  border-radius: 5px;
+  transform: translateY(-3px);
+}
+
+.collection{
+  width: 80%;
+  margin: 80px auto;
+}
+
+.collection .title h2{
+  font-size: 3rem;
+  line-height: 1.5;
+  color: #41452b;
+  text-align: center;
+  margin-top: 1rem;
+  border-bottom: 3px solid;
+}
+
+.gallery {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+}
+
+.gallery .grid {
+  position: relative;
+  background-color: #d7d7d8;
+  overflow: hidden;
+}
+
+.gallery .grid:nth-child(7n + 1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery .grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.gallery .grid:hover img {
+  transform: scale(1.1);
+}
+
+.gallery .grid .overlay-gal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(65, 69, 43, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.gallery .grid:hover .overlay-gal {
+  top: 60px;
+  right: 60px;
+  bottom: 60px;
+  left: 60px;
+  opacity: 10;
+}
+
+.gallery .grid .info {
+  text-align: center;
+}
+
+.gallery .grid .info .caption {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+  top: -5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery .grid:hover .info .caption {
+  top: 0px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s 0,3s ease;
+}
+
+.gallery .grid .info .caption a {
+  color: #ece5d5;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+  }
+
+  .gallery .grid:nth-child(7n + 1) {
+    grid-column: unset;
+    grid-row: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .gallery {
+      flex-direction: column;
+  }
+  .text h2{
+    font-size: 25px;
+  }
+  .explore-cont h1{
+    font-size: 15px;
+  }
+}
+
+.explore{
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://res.cloudinary.com/dxib7u6wq/image/upload/v1684918430/ecofurn/image/quote_bwpq05.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.explore-cont{
+  width: 50%;
+  padding: 50px;
+  color: #f2f2f2;
+}
+.explore-cont h1{
+  font-size: 45px;
+  margin: 70px;
+}
+.explore-cont p{
+  color: #ece5d5;
+  margin: 70px;
+}
+.explore-cont .ctn{
+  margin-top: 30px;
+  margin: 70px;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ada797;
+  border: #ada797 1px solid;
+  padding: 14px 18px;
+  transition: all 0.2s ease;
+}
+.explore-cont .ctn:hover {
+  background: #333a2b;
+  color: #ece5d5;
+}
+
+.services{
+  font-family: 'Headland One', serif;
+  display: flex;
+}
+
+#about{
+  background-image: url('https://res.cloudinary.com/dxib7u6wq/image/upload/v1684918431/ecofurn/image/service_i6emzn.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.services-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  font-size: 40px;
+  color: #ece5d5;
+}
+
+.scroll{
+  width:50%;
+  color: #ece5d5;
+}
+
+.scroll div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.scroll div > h2 {
+  width: 80%;
+  text-align: center;
+  font-size: 40px;
+}
+
+.scroll div:nth-child(1){
+  background-image: url('https://res.cloudinary.com/dxib7u6wq/image/upload/v1684918434/ecofurn/image/delivery_twjpgl.jpg');
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.scroll div:nth-child(2){
+  background-image: url('https://res.cloudinary.com/dxib7u6wq/image/upload/v1684918435/ecofurn/image/payment_jyc0wa.jpg');
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.scroll div:nth-child(3){
+  background-image: url('https://res.cloudinary.com/dxib7u6wq/image/upload/v1684918434/ecofurn/image/install_hrdn7u.jpg');
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.scroll div:nth-child(4){
+  background-image: url('https://res.cloudinary.com/dxib7u6wq/image/upload/v1684918434/ecofurn/image/cs_ugpd3k.jpg');
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.scroll div:nth-child(5){
+  background-image: url('https://res.cloudinary.com/dxib7u6wq/image/upload/v1684918450/ecofurn/image/lps_hrinjx.jpg');
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+@media (max-width: 1400px) {
+  .explore-cont {
+    width: 100%;
+  }
+}
+@media (max-width: 885px){
+  .explore-cont {
+    width: auto;
+    height: auto;
+  }
+  .explore-cont .ctn {
+    font-size: 10px;
+  }
+  .explore-cont h1{
+    font-size: 35px;
+  }
+  
+@media  (max-width: 550px) {
+  .services-title h2{
+    font-size: 20px;
+  }
+  .scroll div h2{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .explore-cont h1{
+    font-size: 15px;
+  }
+}
+}
